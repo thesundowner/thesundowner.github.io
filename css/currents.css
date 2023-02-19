@@ -1,0 +1,64 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgba(51, 51, 51, 0.635);
+  border-radius: 6px;
+  border: #666 1px solid;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: rgba(51, 51, 51, 0.735);
+  color: white;
+  transition: all 250ms;
+}
+
+#active {
+  background-color: rgba(51, 51, 51, 0.935);
+  border-bottom: #666 2px solid;
+}
+
+
+#fl{
+
+  float: right;
+}
+
+#fla{
+
+  background-color: rgba(51, 51, 51, 0.935);
+  border-bottom: #666 2px solid;
+  float: right;
+}
+
+
+@media only screen and (max-width: 453px){
+
+  #fla{
+
+    background-color: rgba(51, 51, 51, 0.935);
+    border-bottom: #666 2px solid;
+    float: left;
+  }
+
+  #fl{
+
+    float: left;
+  }
+
+
+  }
+  

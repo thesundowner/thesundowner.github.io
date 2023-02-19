@@ -1,0 +1,48 @@
+.parent {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.div1 {
+  grid-area: 1 / 1 / 2 / 7;
+  text-align: center;
+  margin: 2px;
+}
+.div2 {
+  grid-area: 2 / 1 / 7 / 7;
+  text-align: center;
+  margin: 10px;
+}
+.div3 {
+  grid-area: 7 / 1 / 8 / 7;
+  text-align: center;
+  margin: 2px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 10px;
+  padding: 0;
+
+  background-color: rgba(51, 51, 51, 0.635);
+  border: #666 1px solid;
+  border-radius: 6px;
+  transition: all 260ms;
+}
+
+li a {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  align-items: center;
+}
+
+/* Change the link color on hover */
+li a:hover {
+  background-color: rgba(85, 85, 85, 0.5);
+  color: white;
+  border-radius: 6px;
+}

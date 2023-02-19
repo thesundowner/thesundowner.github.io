@@ -1,0 +1,50 @@
+<!DOCTYPE VOOOOODOOOOCHILE>
+<html>
+  <head>
+    <title>off lim
+
+    </title>
+    <link rel="stylesheet" href="/css/style_photo.css" />
+    <link rel="stylesheet" href="/css/main_photo.css" />
+    <link rel="stylesheet" href="/css/currents.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="heading">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/html/about.html">About us</a></li>
+          <li><a href="/html/msg.html">Messageboard</a></li>
+          <li style="float: right" id="active">
+            <a href="#">Photo Gallery</a>
+          </li>
+        </ul>
+      </div>
+      <div class="box">
+        <div class="dream">
+          <img src="/cringe shit/7/91.jpg" />
+          <img src="/cringe shit/7/92.jpg" />
+          <img src="/cringe shit/7/93.jpg" />
+          <img src="/cringe shit/7/94.jpg" />
+        </div>
+
+        <div class="dream">
+          <img src="/cringe shit/7/95.jpg" />
+          <img src="/cringe shit/7/96.jpg" />
+          <img src="/cringe shit/7/97.jpg" />
+          <img src="/cringe shit/7/98.jpg" />
+          <img src="/cringe shit/7/99.jpg" />
+          <img src="/cringe shit/7/100.jpg" />
+        </div>
+      </div>
+
+      <br />
+
+      <ul>
+        <li style="float: right">
+          <a href="/html/CRINGE(MOST PART)/photo6.html">Back</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
