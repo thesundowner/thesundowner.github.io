@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+      * {
+        padding: 0%;
+        margin: 0;
+        font-family: Lato, sans-serif;
+
+        transition: all 250ms;
+      }
+
+      body {
+        margin: 1% 2%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      button,
+      input {
+        padding: 5px 10px;
+        margin: 10px;
+      }
+
+      button {
+        border: 1px #000 solid;
+        border-radius: 6px;
+      }
+
+      button:hover {
+        background-color: #777;
+        border: 1px #444 solid;
+      }
+
+      input {
+        border-radius: 5px;
+        border: #000 1px solid;
+      }
+
+      p {
+        display: block;
+        margin: 15px;
+        border: #000 1px solid;
+        background-color: #444;
+        padding: 1%;
+        border-radius: 5px;
+      }
+    </style>
+    <!-- LOVELY RITA METER MAID-->
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>.js devtest enviroment v1 for the sundowner</h1>
+
+    <button onclick="bgDark()">Toggle Dark Mode on</button>
+    <p id="darkstat"></p>
+    <button onclick="bgDarkOff()">Toggle Dark Mode off</button>
+    <button onclick="dateFunction()">Show(Update) Date and Time</button>
+    <p id="date"></p>
+    <br />
+    <input
+      type="text"
+      id="colorbg"
+      placeholder="enter color(name , hex , rgb)"
+    />
+    <button id="btn">Apply background color</button>
+    <input
+      type="text"
+      id="colorfont"
+      placeholder="enter color(name , hex , rgb)"
+    />
+    <button id="btnfont">Apply color</button>
+
+    <h2>Sample Paragraph(to see the effects)</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+      perspiciatis libero ullam nesciunt obcaecati sed eos inventore voluptates
+      placeat. Eius fuga ex animi sapiente, illo perspiciatis ratione.
+      Repudiandae, sint hic!
+    </p>
+
+    <button onclick="goHome()">Home.</button>
+
+    <script>
+      function bgDark() {
+        document.getElementById("darkstat").innerHTML = "Dark Mode On!";
+        document.body.style.backgroundColor = "#222";
+        document.body.style.color = "#fff";
+      }
+      function bgDarkOff() {
+        document.getElementById("darkstat").innerHTML = "Dark Mode Off!";
+        document.body.style.backgroundColor = "#fff";
+        document.body.style.color = "#000";
+      }
+      function dateFunction() {
+        document.getElementById("date").innerHTML = Date();
+      }
+
+      const btn = document.getElementById("btn");
+
+      btn.addEventListener("click", backgroundFunction);
+
+      function backgroundFunction() {
+        var colorbg = document.getElementById("colorbg").value;
+        document.body.style.backgroundColor = colorbg;
+      }
+
+      const btnfont = document.getElementById("btnfont");
+
+      btnfont.addEventListener("click", fontFunction);
+
+      function fontFunction() {
+        var colorfont = document.getElementById("colorfont").value;
+        document.body.style.color = colorfont;
+      }
+
+      function goHome() {
+        window.location.href = "https://thesundowner.github.io";
+      }
+    </script>
+  </body>
+</html>
