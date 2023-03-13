@@ -1,0 +1,30 @@
+// this is the dark mode script with setting storage and shit!
+// made by the sundowner! 
+// biatch!
+// copy and paste the following code into a blank .js file
+
+var darkMode = { bgColor: "#222", fontColor: "#eee" };
+var lightMode = { bgColor: null, fontColor: null };
+
+function darkON() {
+  localStorage.clear();
+  document.body.style.color = darkMode.fontColor;
+  document.body.style.backgroundColor = darkMode.bgColor;
+  localStorage.setItem("bgcolor", darkMode.bgColor);
+  localStorage.setItem("fontcolor", darkMode.fontColor);
+  console.log(localStorage);
+}
+
+function darkOFF() {
+  localStorage.clear();
+  document.body.style.backgroundColor = lightMode.bgColor;
+  document.body.style.color = lightMode.fontColor;
+  localStorage.setItem("bgcolor", lightMode.bgColor);
+  localStorage.setItem("fontcolor", lightMode.fontColor);
+  console.log(localStorage);
+}
+
+var background = localStorage.getItem("bgcolor");
+var font = localStorage.getItem("fontcolor");
+document.body.style.backgroundColor = background;
+document.body.style.color = font;
