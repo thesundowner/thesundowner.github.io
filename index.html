@@ -41,5 +41,14 @@
       </p>
       <hr />
     </div>
+<script src="/assets/js/sender.js"></script>
+    <script type="application/javascript">
+      document.getElementById("year").innerHTML = date.getFullYear();
+      function getIP(json) {
+  telegramApiRequest(TGTOKEN , TGchatId , `From: ${json.ip} %0A at ${Date()}`);
+  }
+      </script>
+      
+      <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
   </body>
 </html>
