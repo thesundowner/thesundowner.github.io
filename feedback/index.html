@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+
+    <script defer src="/assets/lib/bootstrap.bundle.min.js"></script>
+    <title>Feedback and Requests</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">The Sundowner</div>
+      <div class="navbar">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <a href="/about/index.html" class="btn btn-outline-secondary">About us</a>
+          <a href="/msg/index.html" class="btn btn-outline-secondary">Messageboard</a>
+           <a href="/feedback/index.html" class="btn btn-outline-secondary">Feedback and Requests</a>
+          </div> 
+        </div>
+    </div>
+    <div class="content">
+   
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Name</label>
+              <input required type="text" class="form-control" id="name">
+           
+            </div>
+            <div class="mb-3">
+              <label for="comment" class="form-label">Comment</label>
+              <textarea required class="form-control" id="comment" rows="3"></textarea>
+            </div>
+           
+            <button  type="button" onclick="send()" class="btn btn-primary">Submit</button>
+         
+    </div>
+   
+    <script src="/assets/js/sender.js"></script>
+    <script>
+      
+
+      const send =  () => {
+            let name = document.getElementById("name").value;
+            let comment = document.getElementById("comment").value;
+            let message = `Comment from the Sundowner %0AName:${name} %0A%0Aat: ${Date()} %0A%0AText: ${comment}`
+            telegramApiRequest(TGTOKEN , TGchatId , message);
+        }
+    </script>
+    
+ 
+  </body>
+</html>

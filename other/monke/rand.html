@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/lib/bootstrap.min.css" />
+    <script defer src="/assets/lib/bootstrap.bundle.min.js"></script>
+    <title>RCG - in action</title>
+    <style>
+                *{
+    padding: 0;
+    margin: 0;
+    /* color: white ; */
+   
+}
+/* h1{
+    color: white;
+} */
+body{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgb(0, 0, 0)),
+url(/assets/img/monke.png);
+padding: 2%;
+min-height: 100vh;
+}
+h1{
+    padding: 0%;
+    padding-bottom: 0;
+}
+
+
+
+code {
+    background-color: #021c22;
+    display: block;
+    padding: 10px;
+    width: 450px;
+    border-radius: 6px;
+    border: #0dcaf0 1px solid;
+    color: aqua;
+    width: 100%;
+    margin: 1% 0;
+}
+.code code {
+    margin: 0;
+}
+.code
+{
+    display: flex;
+    /* gap: 20px; */
+    column-gap: 20px;
+    padding:0 0 2% 0;
+}
+
+@media screen and (max-width: 425px) {
+    .code {
+        flex-direction: column;
+    }
+}
+
+#res
+{
+    width: 100% ;
+    word-wrap: break-word;
+    background-color: #021422;
+    display: block;
+    padding: 10px;
+    width: 450px;
+    border-radius: 6px;
+    border: #0d5cf0 1px solid;
+    color: rgb(0, 110, 255);
+    width: 100%;
+    margin: 1% 0;
+}
+
+.blinking-cursor {
+            margin-left: 5px;
+            background: rgb(0, 110, 255);
+            animation:  blink 1s infinite;
+
+        }
+
+        @keyframes blink {
+        0% , 50% 
+             {
+                opacity: 1;
+            }
+
+            50.1% , 100% 
+        {
+                opacity: 0;
+            }
+        }
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Character Generator - In action</h1>
+    <hr>
+    <!-- <div class="alert alert-warning" role="alert">
+        Be careful putting large numbers for computation - it may crash your device!
+      </div> -->
+    <!-- <p style="padding-left: 15px;"><em>Inspired by the infinite monkey theorem and book "The Library of Babel" by Jorge Luis Borges - Written by Samuel (Big Smoke) Birhanu</em></p> -->
+   
+    <div class="btn-group">
+        <!-- <span class="input-group-text">Iterations</span>
+     
+        <input id="iterations" type="number" class="form-control" aria-label="Iterations"> -->
+        <!-- <button class="btn btn-outline-secondary" type="button" id="button-addon2">Load</button> -->
+        <button class="btn btn-dark" type="button" id="button-addon1">Render</button>
+      </div>
+
+
+      <div class="d-flex align-items-center" id="loadingEl">
+        <!--  -->
+      </div>
+      <br>
+      <h5>Result:</h5>
+      <hr>
+      <p id="res" class="font-monospace text-wrap"></p>
+      <hr>
+      <script src="monke.js"></script>
+    <script>
+        const res =  document.querySelector("#res")
+        
+// function iterator(x) {
+
+//     for(n=0; n<=x; n++){
+  
+//         str+= monkey()
+//         if(n==x){
+//            type(str)
+//            return str;
+//         }
+//     }
+
+// }
+//  type(iterator(iterations.value))
+let index = 0;
+
+let text = monkey(); 
+
+for(k=1;k<10;k++) {
+    text = monkey()
+}
+// monkey() 
+
+        const btn = document.getElementById("button-addon1")
+        const loadingEl = document.querySelector("#loadingEl")
+        // const iterations = document.querySelector("#iterations")
+
+        btn.addEventListener("click" , () => {
+        //     loadingEl.innerHTML = `<strong>Loading...</strong>
+        // <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>`
+        // for(i=1;i<100;i++) { 
+
+            text = monkey()    
+            text = monkey()    
+            text = monkey()    
+            text = monkey()    
+            text = monkey()    
+            text = monkey()    
+            text = monkey()    
+            text = monkey()    
+            text = monkey()    
+            text = monkey()    
+            text = monkey()    
+//cursed
+            type()   
+ let interval =     setInterval(() => {
+        if(type() == 1) {
+            window.scrollTo({left:0 , top: document.body.scrollHeight , behavior:"smooth"})
+        }
+    setTimeout(() => {
+        clearInterval(interval)
+    }, 10000);
+   
+      }, 2000);
+          
+        // }
+       
+
+
+        })
+
+        function type() {
+    // if(typeof(text) == "string"){
+    if(index <text.length) {
+        res.innerHTML = text.slice(0,index) + `<span class="blinking-cursor"> </span>`;
+        index++;
+        setTimeout(type , 15);
+        return 1;
+    }
+
+    else {
+        res.innerHTML = text.slice(0,index) + `<span class="blinking-cursor">_</span>`;
+        return 1
+    // }
+}
+
+}
+
+
+    </script>
+</body>
+</html>

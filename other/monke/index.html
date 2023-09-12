@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/lib/bootstrap.min.css" />
+    <script defer src="/assets/lib/bootstrap.bundle.min.js"></script>
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+    /* color: white ; */
+   
+}
+/* h1{
+    color: white;
+} */
+body{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgb(0, 0, 0)),
+url(/assets/img/Chimpanzee_seated_at_typewriter.jpg);
+padding: 2%;
+min-height: 100vh;
+}
+h1{
+    padding: 0%;
+    padding-bottom: 0;
+}
+
+
+
+code {
+    background-color: #021c22;
+    display: block;
+    padding: 10px;
+    width: 450px;
+    border-radius: 6px;
+    border: #0dcaf0 1px solid;
+    color: aqua;
+    width: 100%;
+    margin: 1% 0;
+}
+.code code {
+    margin: 0;
+}
+.code
+{
+    display: flex;
+    /* gap: 20px; */
+    column-gap: 20px;
+    padding:0 0 2% 0;
+}
+
+@media screen and (max-width: 425px) {
+    .code {
+        flex-direction: column;
+    }
+}
+
+#res
+{
+    width: 100% ;
+}
+    </style>
+    <title>monke man</title>
+    
+</head>
+<body>
+    <h1>Random Character Generator</h1>
+    
+    <p style="padding-left: 15px;"><em>Inspired by the <a href="https://en.m.wikipedia.org/wiki/infinite_monkey_theorem"> infinite monkey theorem</a> and book "The Library of Babel" by Jorge Luis Borges - Written by Samuel (Big Smoke) Birhanu</em></p>
+    <hr>
+    <div  class="alert alert-light" role="alert">
+       Note: It does not use the terms used in the theorem - nor the concept of the book. This generator uses Vannila JS' own random Number function.
+      </div>
+      <hr>
+      <h2>How it works:</h2>
+      <!-- <p >There are two functions: A simple random number generator that takes a minimum and a maximum value as its argument and returns a value between them - and a function that takes the value one by one and outputs it into text character. </p> -->
+      <!-- <hr> -->
+      <h4>The Random Number Generator</h4>
+    
+        <div class="code">
+            <code style="white-space: pre-line;">  function randomBetween(min, max) {
+                    return Math.floor(Math.random() * (max - min + 1) + min);
+                   }
+            </code>
+            <div class="code-desc">
+                <p>What it does is that it takes 2 arguments - named min and max. And it returns a random number between those two arguments. By default, 
+                the <span style="color: aqua;" class="font-monospace">Math.random()</span> method returns a number between 0 and 1. 
+                </p>
+            </div>
+        </div>
+        <p>This is simple as it gets. According to the tutorial eBook on Javascript created from Free Stack Overflow Contributors, the <span style="color: aqua;" class="font-monospace">Math.random()</span> is considered unrealistic when it comes to its results. The reason being that the random values tend to have a standard deviation approaching 0. In reality, randomness tends to gather around a common value instead of 0.  If plotted on a graph, it should show a bell curve (Gaussian Distributon). So the inbuilt method doesn't show the "randomness" it claims it has.<br>
+        The solution to this - according to the eBook, is this:
+        </p>
+        <code style="white-space: pre-line;">var randNum = (Math.random() + Math.random()) / 2;
+            var randNum = (Math.random() + Math.random() + Math.random()) / 3;
+            var randNum = (Math.random() + Math.random() + Math.random() + Math.random()) / 4; //... do it 4 or 5 times
+        </code>
+        <p>Or a less messy one:
+        </p>
+        <code style="white-space: pre-line;">// v is the number of times random is summed and should be over >= 1
+            // return a random number between 0-1 exclusive
+            function randomG(v){
+             var r = 0;
+             for(var i = v; i > 0; i --){
+                r += Math.random();
+                }
+                return r / v;
+               }                                
+        </code>
+        <p>But this has its own problem. Since it gathers around a common value, it doesn't give you a varied value when you re-work it and give it some boundaries to find a random value from. for 100 - or even - 1000 iterations, you can see the random value clustered around a given value. We can't use this.</p>
+
+        <br>
+        <p>The best canidate is the simple function that takes the boundary arguments.</p>
+        <hr>
+        <h4>Character Set</h4>
+        <p>The Character Set contains the 26 lowercase alphabet letters , a comma , a period and a space - simmilar to the one used in "The Library of Babel." In the future, I plan of implementing the Geez alphabet.
+        
+        </p>
+        <hr>
+       
+        <p>
+            How the RNG and the character set communicate is fairly easy. Javascript has an inbuilt function that takes a character from a string and returns its ASCII value. So I wrote the 26 letters and the punctuation marks(space incuded) and output their ASCII values. then, I pushed each value into an empty array. So when every time the RNG returns a random value, it checks whether it belongs to the ASCII value array and converts them into a text character. Those converted text characters are pushed into a new array and their concatenated string values are displayed. If you do this recursively 10 or 100 times, you'll get more random characters concatenated on top of the previous one.
+        </p>
+
+        <div class="alert alert-info" role="alert">
+            Click <a href="rand.html" class="alert-link">here</a> if you want to see a practical example OR  <a href="monke.js" class="alert-link">view</a> the '.js' file.
+          </div>
+
+          <hr>
+
+    
+</body>
+</html>

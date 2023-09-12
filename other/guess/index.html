@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <style>
+        .alert-dark {
+            width: 600px;
+            height: 650px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            row-gap: 20px;
+        }
+
+
+        @media screen and (max-width: 630px) {
+          .alert-dark {
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        .c {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+        }
+    </style>
+    <script defer src="/assets/lib/bootstrap.bundle.min.js"></script>
+    <title>Guess The Number Game</title>
+  </head>
+  <body onload="init()">
+    <div class="header">
+        <div class="logo">The Sundowner</div>
+        <div class="navbar">
+          <div class="btn-group" role="group">
+              <a href="/about/index.html" class="btn btn-outline-secondary">About us</a>
+            <a href="/msg/index.html" class="btn btn-outline-secondary">Messageboard</a>
+             <a href="/feedback/index.html" class="btn btn-outline-secondary">Feedback and Requests</a>
+            </div> 
+          </div>
+      </div>
+    <div class="c">
+
+       
+
+        <div class="alert alert-dark" role="alert">
+          
+                <h4>
+                  The computer is thinking a number between 0 and 100. <br />Can you guess
+                  it?
+                </h4>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" id="guess" aria-describedby="button-addon2">
+                    <button onclick="checkNumber()" class="btn btn-outline-secondary" type="button" id="button-addon2">Check!</button>
+                  </div>
+                <br />
+                <!-- <button class="regular" onclick="checkNumber()">Check!</button> -->
+                <div class="result"></div>
+          
+                <p style="padding-top: 15%" id="noOfGuess">Number of guesses: 0</p>
+                <p style="overflow: auto" id="guessNum">Guessed numbers are: none</p>
+                <button class="btn btn-danger" onclick="restart()">Restart</button>
+             
+          </div>
+
+          <script>
+            function RNG(x) {
+  return Math.floor(Math.random() * x) + 1;
+}
+             var noOfGuesses = 0,
+        randomNumber,
+        userGuess,
+        guessArr = [];
+
+      function init() {
+        randomNumber = RNG(100);
+        console.log(randomNumber);
+      }
+
+      function checkNumber() {
+        //   init();
+        userGuess = document.getElementById("guess").value;
+        if (userGuess < 1 || userGuess > 100 || isNaN(userGuess)) {
+          alert("Please enter a valid number between 1 and 100.");
+          return;
+        }
+        guessArr.push(userGuess);
+        noOfGuesses += 1;
+        document.getElementById(
+          "guessNum"
+        ).innerHTML = `Guessed numbers are: ${guessArr.join(",")}`;
+        document.getElementById(
+          "noOfGuess"
+        ).innerHTML = `Number of guesses: ${noOfGuesses}`;
+
+        if (randomNumber != userGuess) {
+          if (randomNumber > userGuess) {
+            document.querySelector(
+              ".result"
+            ).innerHTML = ` <div class="alert alert-danger" role="alert">
+                            Too low, Try again.
+                            </div>`;
+          } else if (randomNumber < userGuess) {
+            document.querySelector(
+              ".result"
+            ).innerHTML = ` <div class="alert alert-danger" role="alert">
+                            Too high, Try again.
+                            </div>`;
+          }
+        } else if (randomNumber == userGuess) {
+          document.querySelector(
+            ".result"
+          ).innerHTML = ` <div class="alert alert-info" role="alert">
+            Congratulations! the Number was: ${userGuess}!  
+          </div>`;
+        }
+      }
+
+      function restart() {
+        init();
+        document.querySelector(".result").innerHTML = ``;
+        document.getElementById(
+          "guessNum"
+        ).innerHTML = `Guessed numbers are: none`;
+        document.getElementById("noOfGuess").innerHTML = `Number of guesses: 0`;
+      }
+
+      document.getElementById("guess").addEventListener("keydown", (event) => {
+        if (event.keyCode === 13) {
+          event.preventDefault();
+          checkNumber();
+        }
+      });
+          </script>
+         
+
+
+
+
+
+    </div>
+
+
+   
+
+    
+ 
+  </body>
+</html>
