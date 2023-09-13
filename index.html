@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/assets/lib/bootstrap.min.css" />
+	<meta name="description" content="My Portfolio site + Magnet links site">
+<meta name="author" content="Samuel (Big Smoke) Birhanu">
     <link rel="stylesheet" href="/assets/css/main.css" />
     <style>
       body {
@@ -43,7 +45,7 @@
     </div>
 <script src="/assets/js/sender.js"></script>
     <script type="application/javascript">
-      document.getElementById("year").innerHTML = date.getFullYear();
+    
       function getIP(json) {
   telegramApiRequest(TGTOKEN , TGchatId , `From: ${json.ip} %0A at ${Date()}`);
   }
