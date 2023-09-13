@@ -4,8 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/assets/lib/bootstrap.min.css" />
-	<meta name="description" content="My Portfolio site + Magnet links site">
-<meta name="author" content="Samuel (Big Smoke) Birhanu">
+    <meta
+      itemprop="name"
+      content="Go down with the sun - The Sundowner"
+    />
+    <meta
+      name="application-name"
+      content="Go down with the sun - The Sundowner"
+    />
+    <meta
+      name="twitter:title"
+      content="Go down with the sun - The Sundowner"
+    />
+    <meta property="og:site_name" content="The Sundowner" />
+    <meta
+      property="og:title"
+      content="Go Down with the Sun - The Sundowner"
+    />
+    <meta
+      itemprop="description"
+      content="A portfolio and magnet-link site "
+    />
+    <meta
+      name="description"
+      content="A portfolio and magnet-link site "
+    />
+    <meta
+      name="twitter:description"
+      content="A portfolio and magnet-link site "
+    />
+    <meta
+      property="og:description"
+      content="A portfolio and magnet-link site "
+    />
+    <meta name="description" content="My Portfolio site + Magnet links site" />
+    <meta name="author" content="Samuel (Big Smoke) Birhanu" />
     <link rel="stylesheet" href="/assets/css/main.css" />
     <style>
       body {
@@ -16,8 +49,6 @@
         /* align-items: center; */
         padding: 2%;
       }
-
-   
     </style>
     <script defer src="/assets/lib/bootstrap.bundle.min.js"></script>
     <title>The Sundowner</title>
@@ -27,14 +58,35 @@
     <h6>Click one of the following links to continue.</h6>
     <!-- <hr /> -->
     <div class="btn-group-vertical">
-      <button type="button" onclick="window.location.href = `/contents/index.html`" class="btn btn-outline-secondary">Contents</button>
-      <button type="button" onclick="window.location.href = `/about/index.html`" class="btn btn-outline-secondary">About us</button>
-      <button type="button" onclick="window.location.href = `/msg/index.html`" class="btn btn-outline-secondary">Messageboard</button>
-      <button type="button" onclick="window.location.href = `/other/index.html`" class="btn btn-outline-secondary">Other stuff</button>
+      <button
+        type="button"
+        onclick="window.location.href = `/contents/index.html`"
+        class="btn btn-outline-secondary"
+      >
+        Contents
+      </button>
+      <button
+        type="button"
+        onclick="window.location.href = `/about/index.html`"
+        class="btn btn-outline-secondary"
+      >
+        About us
+      </button>
+      <button
+        type="button"
+        onclick="window.location.href = `/msg/index.html`"
+        class="btn btn-outline-secondary"
+      >
+        Messageboard
+      </button>
+      <button
+        type="button"
+        onclick="window.location.href = `/other/index.html`"
+        class="btn btn-outline-secondary"
+      >
+        Other stuff
+      </button>
     </div>
-
-
-
 
     <div class="footer">
       <p>
@@ -43,14 +95,20 @@
       </p>
       <hr />
     </div>
-<script src="/assets/js/sender.js"></script>
+    <script src="/assets/js/sender.js"></script>
     <script type="application/javascript">
-    
       function getIP(json) {
-  telegramApiRequest(TGTOKEN , TGchatId , `From: ${json.ip} %0A at ${Date()}`);
-  }
-      </script>
-      
-      <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+        telegramApiRequest(
+          TGTOKEN,
+          TGchatId,
+          `From: ${json.ip} %0A at ${Date()}`
+        );
+      }
+    </script>
+
+    <script
+      type="application/javascript"
+      src="https://api.ipify.org?format=jsonp&callback=getIP"
+    ></script>
   </body>
 </html>
