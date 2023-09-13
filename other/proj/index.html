@@ -8,9 +8,17 @@
     <script defer src="/assets/lib/bootstrap.bundle.min.js"></script>
     <title>Other Projects</title>
     <style>
+      .list-group-item {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+
+      }
         .list-group li  {
             display: flex;
             justify-content: space-between;
+        }
+        .list-group li  .gr  {
+          display: flex;
+          column-gap: 10px;
         }
         h6{
             padding: 0;
@@ -19,41 +27,89 @@
             justify-content: center;
             align-items: center;
         }
+@media screen and (max-width: 499px ) {
+  .list-group li  {
+            flex-direction: column;
+            gap: 15px
+            
+            ;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .list-group li  .gr  {
+        justify-content: center;
+        align-items: center;
+        }
+}
     </style>
   </head>
   <body>
-    <div class="header">
-        <div class="logo">The Sundowner</div>
-        <div class="navbar">
-          <div class="btn-group" role="group" aria-label="Basic example">
-              <a href="/about/index.html" class="btn btn-outline-secondary">About us</a>
-            <a href="/msg/index.html" class="btn btn-outline-secondary">Messageboard</a>
-             <a href="/feedback/index.html" class="btn btn-outline-secondary">Feedback and Requests</a>
-            </div> 
+    <nav class="navbar navbar-expand-lg navbar-dark "  >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">The Sundowner</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link"  href="/index.html">Home</a>
+            <a class="nav-link" href="/about/index.html">About us...</a>
+            <a class="nav-link" href="/msg/index.html">Messageboard</a>
+            <a class="nav-link" href="/feedback/index.html">Feedback and Requests</a>
+            <!-- <a class="nav-link disabled">Disabled</a> -->
           </div>
+        </div>
       </div>
+    </nav>
+
     <div class="content">
-        <h4>Project Listing</h4>
-        <ul class="list-group ">
+        <h4>Project Listing</h4><br>
+        <ul class="list-group">
             <li class="list-group-item">
            <h6>ChebesCalc Source Code</h6>
-           <a download href="/assets/other/otherShit/ChebesCalc-main.zip" class="btn btn-primary">Download</a>
+
+           <div class="gr">
+              <a download href="/assets/other/otherShit/ChebesCalc-main.zip" class="btn btn-primary">Download</a>
+              <a href="/assets/other/otherShit/chebescalc-readme.txt" class="btn btn-secondary">View Readme</a>
+           </div>
+           
             </li>
             <li class="list-group-item">
                 <h6>Pi Calculator</h6>
+
+                <div class="gr">
                 <a download href="/assets/other/otherShit/pi.zip" class="btn btn-primary">Download</a>
+                <a href="/assets/other/otherShit/pi-readme.txt" class="btn btn-secondary">View Readme</a>
+           
+                </div>
+                
             </li>
             <li class="list-group-item">
                 <h6>Power Options Source Code</h6>
-                <a download href="/assets/other/otherShit/Power-Options-main.zip" class="btn btn-primary">Download</a>
+
+                <div class="gr">
+                  <a download href="/assets/other/otherShit/Power-Options-main.zip" class="btn btn-primary">Download</a>
+                  <a href="/assets/other/otherShit/power-options-readme.txt" class="btn btn-secondary">View Readme</a>
+             
+                </div>
+                
             </li>
             <li class="list-group-item">
-                <h6>A dumb encryption algorithm</h6>
+              <h6>A dumb encryption algorithm</h6>
+              <div class="gr">
                 <a download href="/assets/other/otherShit/ShogiCode 0.2.0.zip" class="btn btn-primary">Download</a>
+                <a href="/assets/other/otherShit/shogicode-readme.txt" class="btn btn-secondary">View Readme</a>
+           
+              </div>
+
             </li>
             <li class="list-group-item">
-                <h6>My first ever site(archived)</h6>
+              <h6>My first ever site(archived)</h6>
+              <div class="gr">
                 <a download href="/assets/other/otherShit/the_og_chebes_group.zip" class="btn btn-primary">Download</a>
+              </div>
+
             </li>
           </ul>
       
