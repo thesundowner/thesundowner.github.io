@@ -42,13 +42,25 @@
     <link rel="stylesheet" href="/assets/css/main.css" />
     <style>
       body {
-        display: flex;
-        flex-direction: column;
+        /* display: flex;
+        flex-direction: column; */
         text-align: center;
         /* justify-content: center; */
         /* align-items: center; */
         padding: 2%;
       }
+
+      .gap-2 {
+        position: absolute;
+        top: 34%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+      }
+h1{
+  font-weight: 700;
+  font-style: italic;
+}
     </style>
     <script defer src="/assets/lib/bootstrap.bundle.min.js"></script>
     <title>The Sundowner</title>
@@ -57,35 +69,43 @@
     <h1>The Sundowner</h1>
     <h6>Click one of the following links to continue.</h6>
     <!-- <hr /> -->
-    <div class="btn-group-vertical">
+    <div class="d-grid gap-2">
       <button
         type="button"
         onclick="window.location.href = `/contents/index.html`"
-        class="btn btn-outline-secondary"
+        class="btn btn-primary"
       >
         Contents
       </button>
       <button
         type="button"
         onclick="window.location.href = `/about/index.html`"
-        class="btn btn-outline-secondary"
+        class="btn btn-info"
       >
         About us
       </button>
       <button
         type="button"
         onclick="window.location.href = `/msg/index.html`"
-        class="btn btn-outline-secondary"
+        class="btn btn-info"
       >
         Messageboard
       </button>
       <button
         type="button"
         onclick="window.location.href = `/other/index.html`"
-        class="btn btn-outline-secondary"
+        class="btn btn-danger"
       >
         Other stuff
       </button>
+      <button
+      type="button"
+      onclick="window.location.href = `/orange/index.html`"
+      class="btn btn-warning"
+      style="background-color: var(--bs-orange);"
+    >
+      Orange Grove Entertainment Homepage
+    </button>
     </div>
 
     <div class="footer">
