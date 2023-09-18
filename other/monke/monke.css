@@ -1,0 +1,90 @@
+*{
+    padding: 0;
+    margin: 0;
+    /* color: white ; */
+   
+}
+/* h1{
+    color: white;
+} */
+body{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgb(0, 0, 0)),
+url(/assets/img/Chimpanzee_seated_at_typewriter.jpg);
+padding: 2%;
+min-height: 100vh;
+}
+h1{
+    padding: 0%;
+    padding-bottom: 0;
+}
+
+
+
+code {
+    background-color: #021c22;
+    display: block;
+    padding: 10px;
+    width: 450px;
+    border-radius: 6px;
+    border: #0dcaf0 1px solid;
+    color: aqua;
+    width: 100%;
+    margin: 1% 0;
+    font-family: Consolas;
+}
+.code code {
+    margin: 0;
+}
+.code
+{
+    display: flex;
+    /* gap: 20px; */
+    column-gap: 20px;
+    padding:0 0 2% 0;
+}
+
+@media screen and (max-width: 425px) {
+    .code {
+        flex-direction: column;
+    }
+}
+
+#res
+{
+    width: 100% ;
+    word-wrap: break-word;
+    background-color: #021422;
+    display: block;
+    padding: 10px;
+    width: 450px;
+    border-radius: 6px;
+    border: #0d5cf0 1px solid;
+    color: rgb(0, 110, 255);
+    width: 100%;
+    margin: 1% 0;
+    font-family: Consolas;
+}
+
+.blinking-cursor {
+            margin-left: 5px;
+            background: rgb(0, 110, 255);
+            animation:  blink 1s infinite;
+
+        }
+
+        @keyframes blink {
+        0% , 50% 
+             {
+                opacity: 1;
+            }
+
+            50.1% , 100% 
+        {
+                opacity: 0;
+            }
+        }
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }

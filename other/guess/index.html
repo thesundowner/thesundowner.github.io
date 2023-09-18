@@ -6,89 +6,107 @@
     <link rel="stylesheet" href="/assets/lib/bootstrap.min.css" />
     <link rel="stylesheet" href="/assets/css/main.css" />
     <style>
+      .alert-dark {
+        width: 600px;
+       min-height: auto;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        row-gap: 20px;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+      }
+
+      .form-control {
+        background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+      }
+
+      @media screen and (max-width: 630px) {
         .alert-dark {
-            width: 600px;
-            height: auto;
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            align-items: center;
-            row-gap: 20px;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-
+          width: 100%;
+          height: 100%;
+          /* min-height: 100vh; */
+          /* border: none; */
+          border-radius: 0;
         }
+     
+      }
 
-        .form-control {
-          background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
-
-        }
-
-
-        @media screen and (max-width: 630px) {
-          .alert-dark {
-            width: 100%;
-            height: auto;
-          }
-        }
-
-        .c {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 90vh;
-        }
+      .c {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 90vh;
+      }
     </style>
     <script defer src="/assets/lib/bootstrap.bundle.min.js"></script>
     <title>Guess The Number Game</title>
   </head>
   <body onload="init()">
-    <nav class="navbar navbar-expand-lg navbar-dark "  >
+    <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">The Sundowner</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link"  href="/index.html">Home</a>
+            <a class="nav-link" href="/index.html">Home</a>
             <a class="nav-link" href="/about/index.html">About us...</a>
             <a class="nav-link" href="/msg/index.html">Messageboard</a>
-            <a class="nav-link" href="/feedback/index.html">Feedback and Requests</a>
+            <a class="nav-link" href="/feedback/index.html"
+              >Feedback and Requests</a
+            >
             <!-- <a class="nav-link disabled">Disabled</a> -->
           </div>
         </div>
       </div>
     </nav>
     <div class="c">
+      <div class="alert alert-dark" role="alert">
+        <h4>
+          The computer is thinking a number between 0 and 100. <br />Can you
+          guess it?
+        </h4>
+        <div class="input-group mb-3">
+          <input
+            type="number"
+            class="form-control"
+            id="guess"
+            aria-describedby="button-addon2"
+          />
+          <button
+            onclick="checkNumber()"
+            class="btn btn-outline-secondary"
+            type="button"
+            id="button-addon2"
+          >
+            Check!
+          </button>
+        </div>
+        <br />
+        <!-- <button class="regular" onclick="checkNumber()">Check!</button> -->
+        <div class="result"></div>
 
-       
-
-        <div class="alert alert-dark" role="alert">
-          
-                <h4>
-                  The computer is thinking a number between 0 and 100. <br />Can you guess
-                  it?
-                </h4>
-                <div class="input-group mb-3">
-                    <input type="number" class="form-control" id="guess" aria-describedby="button-addon2">
-                    <button onclick="checkNumber()" class="btn btn-outline-secondary" type="button" id="button-addon2">Check!</button>
-                  </div>
-                <br />
-                <!-- <button class="regular" onclick="checkNumber()">Check!</button> -->
-                <div class="result"></div>
-          
-                <p style="padding-top: 15%" id="noOfGuess">Number of guesses: 0</p>
-                <p style="overflow: auto" id="guessNum">Guessed numbers are: none</p>
-                <button class="btn btn-danger" onclick="restart()">Restart</button>
-             
-          </div>
-
-          <script>
-            function RNG(x) {
-  return Math.floor(Math.random() * x) + 1;
-}
-             var noOfGuesses = 0,
+        <p style="padding-top: 15%" id="noOfGuess">Number of guesses: 0</p>
+        <p style="overflow: auto" id="guessNum">Guessed numbers are: none</p>
+        <button class="btn btn-danger" onclick="restart()">Restart</button>
+      </div>
+    </div>
+    <script>
+      function RNG(x) {
+        return Math.floor(Math.random() * x) + 1;
+      }
+      var noOfGuesses = 0,
         randomNumber,
         userGuess,
         guessArr = [];
@@ -140,6 +158,7 @@
       function restart() {
         init();
         document.querySelector(".result").innerHTML = ``;
+        document.getElementById("guess").innerHTML = "";
         document.getElementById(
           "guessNum"
         ).innerHTML = `Guessed numbers are: none`;
@@ -152,19 +171,6 @@
           checkNumber();
         }
       });
-          </script>
-         
-
-
-
-
-
-    </div>
-
-
-   
-
-    
- 
+    </script>
   </body>
 </html>

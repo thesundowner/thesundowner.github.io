@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/lib/bootstrap.min.css" />
+    <script defer src="/assets/lib/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="../monke/monke.css">
+    <style>
+      body {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
+url(/assets/img/cover2.jpg);
+background-position: center;
+background-attachment: fixed;
+background-repeat: no-repeat;
+background-size: cover;
+padding: 0%;
+margin: 0;
+}
+
+.cont {
+    display: flex;
+   column-gap: 10px;
+    margin: 5px;
+    min-height: 90vh;  
+    /* width: 100%; */
+}
+
+
+
+iframe {
+    min-height: 90vh;
+    width: 65%;
+    background-color: var(--bs-dark);
+    border-radius: 0.3rem;
+    border: 1px rgb(80, 80, 80) solid;
+    background: linear-gradient(rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.5));
+
+   
+}
+
+.codes 
+{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    /* border: 1px #000 solid; */
+    width: 35%;
+   
+    /* padding-left: 5px; */
+    /* padding-top: 5px; */
+}
+
+.codes .form-floating textarea.form-control {
+    min-height: 30vh;
+    white-space: pre;
+    font-family: Consolas;
+    resize: none;
+    background: linear-gradient(rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.5));
+
+
+    /* background: linear-gradient(rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.7)); */
+}
+
+
+@media  screen and (max-width: 516px) {
+    .cont {
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    .cont .codes {
+        width: 100%;
+    }
+
+     iframe {
+        width: 100%;
+    }
+}
+    </style>
+    <title>Online HTML Editor</title>
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark "  >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">The Sundowner</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link"  href="/index.html">Home</a>
+              <a class="nav-link" href="/about/index.html">About us...</a>
+              <a class="nav-link" href="/msg/index.html">Messageboard</a>
+              <a class="nav-link" href="/feedback/index.html">Feedback and Requests</a>
+              <!-- <a class="nav-link disabled">Disabled</a> -->
+            </div>
+          </div>
+        </div>
+      </nav>
+
+
+      <div class="cont">
+        <div class="codes">
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="HTML" id="html"></textarea>
+                <label for="html">HTML</label>
+              </div>
+              <div class="form-floating">
+                <textarea class="form-control" placeholder="CSS" id="css"></textarea>
+                <label for="css">CSS</label>
+              </div>
+              <div class="form-floating">
+                <textarea class="form-control" placeholder="JavaScript" id="js"></textarea>
+                <label for="js">JavaScript</label>
+              </div>
+        </div>
+
+      
+            <iframe id="output"></iframe>
+   
+      </div>
+    
+
+      <script>
+    const htmlCodeEl = document.querySelector("#html");
+    const cssCodeEl = document.querySelector("#css");
+    const jsCodeEl = document.querySelector("#js");
+      const previewEl = document.querySelector("#output");
+      function f5() {
+        localStorage.setItem("htmlCodeEl", htmlCodeEl.value);
+        localStorage.setItem("cssCodeEl", cssCodeEl.value);
+        localStorage.setItem("jsCodeEl", jsCodeEl.value);
+
+        previewEl.contentDocument.body.innerHTML =
+          `<style>${localStorage.cssCodeEl}</style>` + localStorage.htmlCodeEl;
+        previewEl.contentWindow.eval(localStorage.jsCodeEl);
+      }
+
+      
+      htmlCodeEl.value = localStorage.htmlCodeEl;
+      cssCodeEl.value = localStorage.cssCodeEl;
+      jsCodeEl.value = localStorage.jsCodeEl;
+      
+      htmlCodeEl.addEventListener("keyup", function () {
+            f5();
+          });
+          cssCodeEl.addEventListener("keyup", function () {
+            f5();
+          });
+          jsCodeEl.addEventListener("keyup", function () {
+            f5();
+          });
+      </script>
+</body>
+</html>

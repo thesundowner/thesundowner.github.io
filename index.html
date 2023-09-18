@@ -4,51 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/assets/lib/bootstrap.min.css" />
-    <meta
-      itemprop="name"
-      content="Go down with the sun - The Sundowner"
-    />
+    <meta itemprop="name" content="Go down with the sun - The Sundowner" />
     <meta
       name="application-name"
       content="Go down with the sun - The Sundowner"
     />
-    <meta
-      name="twitter:title"
-      content="Go down with the sun - The Sundowner"
-    />
+    <meta name="twitter:title" content="Go down with the sun - The Sundowner" />
     <meta property="og:site_name" content="The Sundowner" />
-    <meta
-      property="og:title"
-      content="Go Down with the Sun - The Sundowner"
-    />
-    <meta
-      itemprop="description"
-      content="A portfolio and magnet-link site "
-    />
-    <meta
-      name="description"
-      content="A portfolio and magnet-link site "
-    />
+    <meta property="og:title" content="Go Down with the Sun - The Sundowner" />
+    <meta itemprop="description" content="A portfolio and magnet link site " />
+    <meta name="description" content="A portfolio and magnet-link site " />
     <meta
       name="twitter:description"
-      content="A portfolio and magnet-link site "
+      content="A portfolio and magnet link site "
     />
     <meta
       property="og:description"
-      content="A portfolio and magnet-link site "
+      content="A portfolio and magnet link site "
     />
-    <meta name="description" content="My Portfolio site + Magnet links site" />
+    <meta name="description" content="A portfolio and magnet link site" />
     <meta name="author" content="Samuel (Big Smoke) Birhanu" />
     <link rel="stylesheet" href="/assets/css/main.css" />
     <style>
+
+
+  
+
       body {
-        /* display: flex;
-        flex-direction: column; */
-        text-align: center;
-        /* justify-content: center; */
-        /* align-items: center; */
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+url(/assets/img/cover2.jpg);
+background-position: center;
+background-attachment: fixed;
+background-repeat: no-repeat;
+background-size: cover;
+animation: 2s linear;
         padding: 2%;
-      }
+        min-height: 100vh;
+        text-align: center;
+}
 
       .gap-2 {
         position: absolute;
@@ -57,10 +50,51 @@
         transform: translate(-50%, -50%);
         width: 90%;
       }
-h1{
-  font-weight: 700;
-  font-style: italic;
-}
+      h1 {
+        font-weight: 700;
+        font-style: italic;
+      }
+
+      .btn-outline-warning {
+        animation: 2s cubic-bezier(0.42, 0, 0, 0.99);
+        color: var(--bs-orange);
+      }
+
+      .btn-outline-warning:hover {
+        background: linear-gradient(
+          to bottom left,
+          rgba(246, 2, 26, 0.703),
+          rgb(255, 102, 0),
+          var(--bs-orange),
+          rgb(255, 188, 63)
+        );
+        color: black;
+      }
+
+      @keyframes orange {
+        from {
+          /* transform: scale(1); */
+        }
+        to {
+          background: linear-gradient(
+          to bottom left,
+          rgba(246, 2, 26, 0.703),
+          rgb(255, 102, 0),
+          var(--bs-orange),
+          rgb(255, 188, 63)
+          
+        );
+        color: var(--bs-orange);
+
+          /* transform: scale(100); */
+        }
+      }
+
+      @media screen and (max-height: 475px) {
+        .gap-2 {
+          top: 50%;
+        }
+      }
     </style>
     <script defer src="/assets/lib/bootstrap.bundle.min.js"></script>
     <title>The Sundowner</title>
@@ -73,39 +107,39 @@ h1{
       <button
         type="button"
         onclick="window.location.href = `/contents/index.html`"
-        class="btn btn-primary"
+        class="btn btn-outline-primary"
       >
         Contents
       </button>
       <button
         type="button"
         onclick="window.location.href = `/about/index.html`"
-        class="btn btn-info"
+        class="btn btn-outline-info"
       >
         About us
       </button>
       <button
         type="button"
         onclick="window.location.href = `/msg/index.html`"
-        class="btn btn-info"
+        class="btn btn-outline-info"
       >
         Messageboard
       </button>
       <button
         type="button"
         onclick="window.location.href = `/other/index.html`"
-        class="btn btn-danger"
+        class="btn btn-outline-danger"
       >
         Other stuff
       </button>
       <button
-      type="button"
-      onclick="window.location.href = `/orange/index.html`"
-      class="btn btn-warning"
-      style="background-color: var(--bs-orange);"
-    >
-      Orange Grove Entertainment Homepage
-    </button>
+        type="button"
+        onclick="orange()"
+        class="btn btn-outline-warning"
+        style="border-color: var(--bs-orange); "
+      >
+        Orange Grove Entertainment Homepage
+      </button>
     </div>
 
     <div class="footer">
@@ -117,18 +151,27 @@ h1{
     </div>
     <script src="/assets/js/sender.js"></script>
     <script type="application/javascript">
-      function getIP(json) {
-        telegramApiRequest(
-          TGTOKEN,
-          TGchatId,
-          `From: ${json.ip} %0A at ${Date()}`
-        );
+      // function getIP(json) {
+      //   telegramApiRequest(
+      //     TGTOKEN,
+      //     TGchatId,
+      //     `From: ${json.ip} %0A at ${Date()}`
+      //   );
+      // }
+
+      function orange() {
+        document.querySelector("body").style.animationName =
+          "orange";
+        // document.querySelector("body").innerHTML = "Mr. Orange";
+        setTimeout(() => {
+          window.location.href = `/orange/index.html`;
+        }, 1446);
       }
     </script>
 
-    <script
+    <!-- <script
       type="application/javascript"
       src="https://api.ipify.org?format=jsonp&callback=getIP"
-    ></script>
+    ></script> -->
   </body>
 </html>

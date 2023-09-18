@@ -9,20 +9,33 @@
     <style>
         body{
             background-color: rgb(14, 148, 234);
+            background-image: url(/assets/img/trollwhit.png);
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
+            text-align: center;
+            color: rgb(0, 255, 42);
 
         }
 
         .heart{
-            font-size: 10rem;  
+            font-size: 5rem;  
             animation: heart .5s infinite alternate linear; 
+            background: #000;
+        }
+a {
+    background: #000;
+    color: green;
+}
+        img {
+            width: 50%;
+            height: 50%;
         }
         @keyframes heart {
             from{
-                transform: scale(0.7);
+                transform: scale(0.0);
             }
             to{
                 transform: scale(1);
@@ -32,15 +45,19 @@
     </style>
 </head>
 <body>
-    <center>
-        <img src="/img/trollwhit.png" width="300" height="300">
-        <br>
-    <div class="heart">YOU'VE BEEN TROLLED!
+ 
+
+ 
+    <div class="heart">
+        
+        YOU'VE BEEN TROLLED!
+    
     </div>
-    <br>
+    
+ 
 
     <a href="index.html">Go to The Homepage.</a>
-    </center>
+  
     
     
         

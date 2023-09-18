@@ -1,13 +1,23 @@
+@font-face {
+  font-family: Banschrift;
+  src: url(/assets/fonts/bahnschrift.ttf);
+}
+
+@font-face {
+  font-family: Consolas;
+  src: url(/assets/fonts/consola.ttf);
+}
 *{
  padding: 0;
  margin: 0;
  transition: all 250ms;
+ font-family: Banschrift , sans-serif;
 
 }
 
 body {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
-url(/assets/img/cover.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+url(/assets/img/cover2.jpg);
 background-position: center;
 background-attachment: fixed;
 background-repeat: no-repeat;
@@ -27,6 +37,7 @@ button a {
     transform: translate(-50% , -50%);
     font-size: 13px;
     font-weight: 100;
+    text-align: center;
     
 }
 
@@ -37,56 +48,14 @@ button a {
     justify-content: space-between;
   }
 
-  @media screen and (max-width: 630px) {
-    .header {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .btn-group .btn-outline-secondary {
-      font-size: 13px;
-    }
-    .header .navbar {
-      width: 100%;
-    }
-    .header .logo {
-      width: 100%;
-      justify-content: center;
+  @media screen and (max-width: 400px) {
+    .footer {
+      font-size: 10px;
     }
   }
-  .header .logo {
-    /* border: 1px white solid; */
-    width: 45%;
-    /* padding-top: 10px; */
-    font-size: 25px;
-    font-weight: 600;
-    font-style: italic;
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-  }
 
-  .header .navbar {
-    width: 50%;
-    /* border: 1px white solid; */
-    display: flex;
-    justify-content: center;
-  }
 
-  ul {
-    margin: 0;
-    display: flex;
-    column-gap: 10px;
-    justify-content: space-evenly;
-    list-style-type: none;
-    width: 100%;
-  }
 
-  ul li {
-    /* border: 1px white solid; */
-    padding: 2px;
-  }
 
   .grid {
 display: flex;
@@ -102,8 +71,8 @@ margin-top: 2%;
 
 
 .card {
-    height: 400px;
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7));
+    height: 425px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5 ), rgba(0, 0, 0, 0.7));
 
 }
 
@@ -118,7 +87,13 @@ margin-top: 2%;
 }
 
 nav {
-  /* background: linear-gradient(rgba(8, 5, 0, 0.529), rgba(0, 0, 0, 0.527)) */
+  /* background: linear-gradient(rgba(126, 80, 0, 0.041), rgba(185, 166, 0, 0.164)); */
   border-bottom: 1px rgba(255, 255, 255, 0.349) solid;
+  /* background: rgba(33, 37, 41, 0.774); */
+  
 
 }
+
+/* .navbar-brand {
+  color: rgb(220, 140, 20);
+} */
