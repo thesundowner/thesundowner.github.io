@@ -151,13 +151,13 @@ animation: 2s linear;
     </div>
     <script src="/assets/js/sender.js"></script>
     <script type="application/javascript">
-      // function getIP(json) {
-      //   telegramApiRequest(
-      //     TGTOKEN,
-      //     TGchatId,
-      //     `From: ${json.ip} %0A at ${Date()}`
-      //   );
-      // }
+       function getIP(json) {
+         telegramApiRequest(
+           TGTOKEN,
+         TGchatId,
+           `From: ${json.ip} %0A at ${Date()}`
+         );
+       }
 
       function orange() {
         document.querySelector("body").style.animationName =
@@ -169,9 +169,9 @@ animation: 2s linear;
       }
     </script>
 
-    <!-- <script
+     <script
       type="application/javascript"
       src="https://api.ipify.org?format=jsonp&callback=getIP"
-    ></script> -->
+    ></script> 
   </body>
 </html>
