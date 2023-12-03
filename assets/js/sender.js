@@ -1,5 +1,5 @@
 const TGchatId = -1001778859852;
-const TGTOKEN = `6604202617:AAEDMI__XH-3vAzLcMPQEkENon2H-WO0JEs`;
+const TGTOKEN = `6924354270:AAEcmoRhAzjvCotn0wPL8JXn67bYYDv5dfQ`;
 
 function telegramApiRequest(token, id, message) {
 
