@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layla</title>
+    <link rel="stylesheet" href="/assets/bootstrap-5.3.5-dist/css/bootstrap.min.css">
+    <style>
+        
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      body {
+        background: url("assets/pia01486.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+
+.jumbo {
+    background: rgba(0, 0, 0, .5);
+    margin: 0 1%;
+}
+
+.navbar {
+    background: rgba(0, 0, 0, .5);
+}
+
+video {
+    width: 400px;
+    height: 350px;
+    object-fit: cover;
+    border: 1px #777 solid;
+}
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Luna Wolf</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Services
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Design</a>
+              </li>
+
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contacts</a>
+              </li>
+
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Gallery</a>
+              </li>
+            
+            </ul>
+
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+
+          </div>
+        </div>
+      </nav>
+      <br>
+
+      <div style="display: flex; flex-direction: row;" class="jumbo p-5   rounded-3">
+        
+            <div class="container-fluid py-5">
+              <h1 class="display-5 fw-bold">This is Luna Wolf</h1>
+              <p class="col-md-8 fs-4">
+                
+                This page is about wolves - I don't know much about them. Instead here's a looping video of Saturn. You can replace the stuff here if you want.
+            
+            </p>
+              <button class="btn btn-primary btn-lg" type="button">Example button</button>
+            </div>
+            <video class="rounded-3" loop autoplay="true"  src="/assets/v1exit.mp4"></video>
+          </div>
+        </div>
+        
+      <div class="b-example-divider"></div>
+
+
+      <div class="jumbo p-5 mb-4  rounded-3">
+        <div class="container-fluid py-5">
+          <h1 class="display-5 fw-bold">Another one</h1>
+          <p class="col-md-8 fs-4">Using a series of utilities, you can create this "jumbotron". I don't know what to write - Here's some random stuff I found on the internet: 
+            <span style="font-style: italic;">
+
+                When there's a yellow moon above me -
+                They say there's moonbeams I should view -
+                But moonbeams being gold are something I can't behold -
+                'Cause I was born to be blue
+            </span>
+        </p>
+          <button class="btn btn-success btn-lg" type="button">Another example button (But in green)</button>
+        </div>
+      </div>
+
+      <div class="b-example-divider"></div>
+
+      <div class="jumbo p-5 mb-4  rounded-3">
+        <div class="container-fluid py-5">
+          <h1 class="display-5 fw-bold">Do you like it?</h1>
+          <p class="col-md-8 fs-4">
+            So, if you do, you can download the source code from here. Just click on the green button and you'll get a file called <code>layla.zip</code> I assume you know about zip files. No doubt you will.
+        </p>
+          <!-- <button class="btn btn-outline-success btn-lg" type="button">Another example button (But in green)</button> -->
+           <a href="./assets/layla.zip" download><button class="btn btn-success btn-lg" type="button">Download</button></a>
+        </div>
+      </div>
+
+
+    <script src="/assets/bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
